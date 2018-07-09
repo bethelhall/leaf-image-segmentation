@@ -27,11 +27,7 @@ def generate_background_markers(folder, intensity=5):
                 image[marker] = np.array([intensity, intensity, intensity])
                 # image[~marker] = np.array([0, 0, 0])
 
-                cv2.imwrite(os.path.join(new_folder, file), image)
             except ValueError as err:
-                if str(err) == IMAGE_NOT_READ:
-                    print('Error: Could not read image file: ', file)
-                elif str(err) == NOT_COLOR_IMAGE:
                     print('Error: Not color image file: ', file)
                 else:
                     pass
